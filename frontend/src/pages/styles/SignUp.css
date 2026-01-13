@@ -1,0 +1,104 @@
+.signup-container {}
+
+.signup-data {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.signup-data .signup-heading {
+    font-size: 1.5em;
+    font-weight: 650;
+    margin: 0px;
+}
+
+.signup-data .login-message{
+    margin: 0px auto 15px auto;
+}
+
+.signup-data .name-row {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+/* Inputs */
+.signup-data input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid lightgrey;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.signup-data input:focus {
+    border: 1px solid #007bff;
+}
+
+/* Button */
+.signup-data .signup-btn {
+    width: 100%;
+    /* fully responsive */
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: none;
+    background: #000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-data .signup-btn:hover {
+    background: #333;
+}
+
+.login-link{
+    margin: 0px 0px 15px 0px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Design */
+@media (max-width: 600px) {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: content-box;
+    }
+
+    .signup-data {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .signup-data .name-row {
+        gap: 5px;
+    }
+
+    .signup-data .name-row input {
+        flex: 1;
+    }
+
+    .signup-data input,
+    .signup-data .signup-btn {
+        width: 90%;
+
+    }
+}

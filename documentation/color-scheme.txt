@@ -1,0 +1,11 @@
+🎨 VIBRANT BRAND PALETTE (Ready to Use)
+Purpose	Color	HEX
+Primary	Vivid Royal Blue	#004BFF
+Secondary	Vibrant Jade	#00D46A
+CTA / Buttons	Fire Red	#FF1A1A
+Accent 1	Sun Gold	#FFD024
+Accent 2	Electric Cyan	#00E4FF
+Accent 3	Magenta Prosperity	#FF00A8
+Highlight	Tangerine Orange	#FF7A00
+Background Light	White	#FFFFFF
+Background Dark	Graphite Black	#1A1A1A

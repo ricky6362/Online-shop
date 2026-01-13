@@ -1,0 +1,164 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.header-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-links a, .mobile-menu a, .hero-icon {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: 0.2s;
+}
+
+.header-links a:hover, .mobile-menu a:hover, .hero-icon:hover{
+    color: #004BFF;
+}
+
+/* HAMBURGER (hidden on desktop/tablet)  */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* -------- ICONS -------- */
+.search-icons {
+    display: flex;
+    align-items: center;
+}
+
+.hero-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.hero-icon {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.hero-icon:hover {
+    color: #004BFF;
+}
+
+/* -------- MOBILE MENU -------- */
+.mobile-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 50;
+}
+
+/* 📱 MOBILE DESIGN (< 768px)                  */
+@media (max-width: 767px) {
+
+    /* 3-item layout: logo | icons | hamburger */
+    .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        gap: 10px;
+    }
+
+    /* Hide desktop links */
+    .header-links {
+        display: none;
+    }
+
+    /* Logo left */
+    .logo {
+        order: 1;
+        font-size: 1.4rem;
+    }
+
+    /* Icons should NOT be centered — align like desktop */
+    .search-icons {
+        order: 2;
+        justify-self: end;
+    }
+
+    .hero-icons {
+        gap: 15px;
+    }
+
+    .hero-icon {
+        font-size: 26px;
+    }
+
+    /* Hamburger far right */
+    .hamburger {
+        display: block;
+        order: 3;
+        justify-self: end;
+    }
+
+    /* Full-width dropdown */
+    .mobile-menu {
+        top: 58px;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 14px 14px;
+        padding: 1.4rem;
+    }
+}
+
+/* ============================================ */
+/* 🖥 TABLET (768px - 1024px)                   */
+/* SAME AS DESKTOP!                             */
+/* ============================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Same as laptop layout */
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 92%;
+    }
+
+    /* Show desktop nav */
+    .header-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    /* Hide hamburger on tablet */
+    .hamburger {
+        display: none;
+    }
+
+    /* Icons right side like desktop */
+    .search-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-icon {
+        font-size: 28px;
+    }
+}

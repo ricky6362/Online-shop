@@ -1,0 +1,31 @@
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footer-icons{
+    display: flex;
+    gap: 20px;
+
+}
+
+.footer-icon{
+    border: 10px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+/* Mobile Design */
+@media (max-width: 600px){
+    .footer-container{
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+}

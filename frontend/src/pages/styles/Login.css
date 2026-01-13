@@ -1,0 +1,77 @@
+.welcome-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;     
+    margin: auto;
+    text-align: center;
+}
+
+.welcome-data .welcome-heading{
+    font-size: 1.5em;
+    font-weight: 650;
+    margin: 0px;
+}
+
+.welcome-data .login-message{
+    margin:15px 0px 20px 0px;
+}
+
+
+/* Inputs */
+.welcome-data input {
+    width: 100%;     
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid lightgrey;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.welcome-data input:focus {
+    border: 1px solid #007bff;
+}
+
+/* Button */
+.welcome-data .login-btn {
+    width: 100%;           /* fully responsive */
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: none;
+    background: #000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.welcome-data .login-btn:hover {
+    background: #333;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Design */
+@media (max-width: 600px){
+    .welcome-data {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .welcome-data input,
+    .welcome-data .login-btn {
+        width: 90%;
+
+    }
+}
