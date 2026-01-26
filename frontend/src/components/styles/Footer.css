@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 15px auto;
 }
 
 .footer-icons{

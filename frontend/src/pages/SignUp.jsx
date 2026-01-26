@@ -10,8 +10,6 @@ function SignUp() {
             <Header />
 
             <div className="signup-container">
-                <div className="signup-img"></div>
-
                 <div className="signup-data">
                     <p className="signup-heading">Create Account</p>
                     <p className="login-message">Register your account here</p>

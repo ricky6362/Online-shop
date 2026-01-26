@@ -9,7 +9,6 @@ function Login() {
         <>
             <Header />
             <div className="login-container">
-                <div className="login-img"></div>
                 <div className="login-data">
                     <div className="welcome-data">
                         <p className="welcome-heading">Welcome Back</p>

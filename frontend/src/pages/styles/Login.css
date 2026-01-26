@@ -1,27 +1,45 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.login-container .login-data {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
 .welcome-data {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
-    max-width: 400px;     
+    max-width: 400px;
     margin: auto;
     text-align: center;
 }
 
-.welcome-data .welcome-heading{
+.welcome-data .welcome-heading {
     font-size: 1.5em;
     font-weight: 650;
     margin: 0px;
 }
 
-.welcome-data .login-message{
-    margin:15px 0px 20px 0px;
+.welcome-data .login-message {
+    margin: 15px 0px 20px 0px;
 }
 
 
 /* Inputs */
 .welcome-data input {
-    width: 100%;     
+    width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 6px;
@@ -37,7 +55,8 @@
 
 /* Button */
 .welcome-data .login-btn {
-    width: 100%;           /* fully responsive */
+    width: 100%;
+    /* fully responsive */
     padding: 12px;
     margin-top: 20px;
     border-radius: 25px;
@@ -63,7 +82,11 @@
 }
 
 /* Mobile Design */
-@media (max-width: 600px){
+@media (max-width: 600px) {
+    .login-container .login-data{
+        padding: 30px 5px;
+    }
+
     .welcome-data {
         width: 100%;
         max-width: 90%;

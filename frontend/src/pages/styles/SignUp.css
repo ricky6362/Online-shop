@@ -1,4 +1,13 @@
-.signup-container {}
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
 .signup-data {
     display: flex;
@@ -9,6 +18,10 @@
     max-width: 400px;
     margin: auto;
     text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 30px;
 }
 
 .signup-data .signup-heading {
@@ -84,8 +97,7 @@
     }
 
     .signup-data {
-        width: 100%;
-        max-width: 90%;
+        padding: 30px 5px;
     }
 
     .signup-data .name-row {
