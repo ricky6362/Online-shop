@@ -336,7 +336,7 @@ function About() {
                 <h3>Ready to find your next favorite?</h3>
                 <p>Browse our latest collection and shop with confidence.</p>
               </div>
-              <a className="cta-btn" href="/shop">
+              <a className="cta-btn" href="/products">
                 Shop Now
               </a>
             </div>

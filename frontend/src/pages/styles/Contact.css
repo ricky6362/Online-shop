@@ -1,0 +1,359 @@
+/* Component-scoped styles only (no globals) */
+
+.cp-Contact {
+  background: #ffffff;
+  color: #0b0f19;
+  padding: 22px 0 42px;
+}
+
+/* ✅ Mobile-first: 90% width + centered */
+.cp-Contact__container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+}
+
+.cp-Contact__header {
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.cp-Contact__eyebrow {
+  margin: 0 0 8px;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(11, 15, 25, 0.65);
+}
+
+.cp-Contact__title {
+  margin: 0 0 8px;
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0b0f19;
+}
+
+.cp-Contact__subtitle {
+  margin: 0;
+  max-width: 60ch;
+  color: rgba(11, 15, 25, 0.72);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Layout (mobile first) */
+.cp-Contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* Cards */
+.cp-Contact__card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 15, 25, 0.10);
+  border-radius: 20px;
+  box-shadow: 0 14px 30px rgba(11, 15, 25, 0.08);
+  box-sizing: border-box; /* ✅ fix */
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__card--form,
+.cp-Contact__card--details {
+  padding: 16px;
+  box-sizing: border-box; /* ✅ fix */
+}
+
+/* ✅ Extra safety: prevent any horizontal overflow inside the form card */
+.cp-Contact__card--form {
+  overflow: hidden; /* ✅ fix */
+}
+
+.cp-Contact__cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cp-Contact__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(124, 92, 255, 0.10);
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  color: #0b0f19;
+  font-size: 13px;
+}
+
+.cp-Contact__cardHint {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(11, 15, 25, 0.55);
+  padding-top: 6px;
+  text-align: right;
+}
+
+/* ✅ Form: mobile-first, clean spacing */
+.cp-Contact__form {
+  display: grid;
+  gap: 12px;
+  box-sizing: border-box; /* ✅ fix */
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__row {
+  display: grid;
+  grid-template-columns: 1fr; /* ✅ stacked by default on mobile */
+  gap: 12px;
+  box-sizing: border-box; /* ✅ fix */
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__field {
+  display: grid;
+  gap: 8px;
+  min-width: 0; /* ✅ prevents overflow in small screens */
+  box-sizing: border-box; /* ✅ fix */
+}
+
+.cp-Contact__label {
+  font-size: 13px;
+  color: rgba(11, 15, 25, 0.72);
+}
+
+.cp-Contact__input {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(11, 15, 25, 0.14);
+  background: #ffffff;
+  color: #0b0f19;
+  padding: 12px 12px;
+  outline: none;
+  box-sizing: border-box; /* ✅ ensures padding doesn't break widths */
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.cp-Contact__input::placeholder {
+  color: rgba(11, 15, 25, 0.35);
+}
+
+.cp-Contact__input:focus {
+  border-color: rgba(124, 92, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.12);
+}
+
+.cp-Contact__select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(11, 15, 25, 0.55) 50%),
+    linear-gradient(135deg, rgba(11, 15, 25, 0.55) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.cp-Contact__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Notice */
+.cp-Contact__notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(11, 15, 25, 0.14);
+  background: rgba(11, 15, 25, 0.04);
+  font-size: 13px;
+  color: #0b0f19;
+  box-sizing: border-box; /* ✅ fix */
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__noticeDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff4d6d;
+  box-shadow: 0 0 0 4px rgba(255, 77, 109, 0.16);
+}
+
+.cp-Contact__notice--success {
+  border-color: rgba(34, 197, 94, 0.30);
+  background: rgba(34, 197, 94, 0.10);
+}
+
+.cp-Contact__notice--error {
+  border-color: rgba(255, 77, 109, 0.30);
+  background: rgba(255, 77, 109, 0.10);
+}
+
+/* ✅ Button (fix overflow on mobile) */
+.cp-Contact__btn {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 1), rgba(124, 92, 255, 0.7));
+  box-shadow: 0 12px 26px rgba(124, 92, 255, 0.22);
+  cursor: pointer;
+  font-weight: 700;
+
+  display: flex; /* ✅ was inline-flex */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  box-sizing: border-box; /* ✅ important */
+  min-width: 0; /* ✅ prevents flex overflow */
+  transition: transform 150ms ease, filter 150ms ease;
+}
+
+.cp-Contact__btn:hover {
+  filter: brightness(1.03);
+}
+
+.cp-Contact__btn:active {
+  transform: translateY(1px);
+}
+
+.cp-Contact__fineprint {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(11, 15, 25, 0.55);
+  line-height: 1.5;
+}
+
+/* Details */
+.cp-Contact__detailsHeader {
+  margin-bottom: 12px;
+}
+
+.cp-Contact__detailsTitle {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: #0b0f19;
+}
+
+.cp-Contact__detailsSubtitle {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(11, 15, 25, 0.72);
+  line-height: 1.55;
+}
+
+.cp-Contact__detailsList {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__detailsItem {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(11, 15, 25, 0.10);
+  background: rgba(11, 15, 25, 0.02);
+  box-sizing: border-box; /* ✅ fix */
+  min-width: 0; /* ✅ fix */
+}
+
+.cp-Contact__detailsItem--link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.cp-Contact__detailsItem--link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124, 92, 255, 0.28);
+  background: rgba(124, 92, 255, 0.08);
+}
+
+.cp-Contact__detailsIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 92, 255, 0.10);
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  flex: 0 0 auto;
+}
+
+.cp-Contact__detailsLabel {
+  font-size: 12px;
+  color: rgba(11, 15, 25, 0.62);
+  letter-spacing: 0.02em;
+}
+
+.cp-Contact__detailsValue {
+  font-size: 14px;
+  margin-top: 2px;
+  color: #0b0f19;
+}
+
+.cp-Contact__detailsHint {
+  margin-top: 3px;
+  font-size: 12px;
+  color: rgba(11, 15, 25, 0.55);
+}
+
+/* ✅ Tablet/Laptop */
+@media (min-width: 720px) {
+  .cp-Contact {
+    padding: 42px 0 62px;
+  }
+
+  .cp-Contact__container {
+    width: min(92%, 1100px);
+  }
+
+  .cp-Contact__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .cp-Contact__card--form,
+  .cp-Contact__card--details {
+    padding: 18px;
+  }
+
+  .cp-Contact__row {
+    grid-template-columns: 1fr 1fr; /* ✅ 2 columns only on tablet+ */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cp-Contact__card--form,
+  .cp-Contact__card--details {
+    padding: 20px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cp-Contact__input,
+  .cp-Contact__btn,
+  .cp-Contact__detailsItem--link {
+    transition: none !important;
+  }
+}
