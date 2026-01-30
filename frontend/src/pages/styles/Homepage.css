@@ -1,0 +1,319 @@
+/* =========================================
+   HOMEPAGE ONLY STYLES (Scoped)
+   ========================================= */
+
+.homepage-page {
+  background: #ffffff;
+}
+
+/* Black text only for homepage */
+.homepage-page,
+.homepage-page * {
+  color: #000;
+}
+
+.homepage-page .homepage-container {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.homepage-page .homepage-content {
+  min-height: 90vh;
+  width: 100%;
+  padding: 14px 0 26px;
+}
+
+/* Center helpers */
+.homepage-page .center-heading {
+  text-align: center;
+}
+
+.homepage-page .center-text {
+  text-align: center;
+}
+
+/* =========================================
+   CTA (single full-width rectangle)
+   - Centered text + button under it
+   - Height: 60vh
+   ========================================= */
+
+.homepage-page .homepage-cta {
+  margin-top: 10px;
+}
+
+.homepage-page .cta-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(34, 197, 94, 0.08));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* CTA background glow */
+.homepage-page .cta-card::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  background: radial-gradient(circle at 20% 30%, rgba(124, 92, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(34, 197, 94, 0.10), transparent 45%);
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.homepage-page .cta-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* New CTA layout */
+.homepage-page .cta-centered {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+/* CTA title (single text) */
+.homepage-page .cta-title {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 22ch;
+}
+
+/* CTA button */
+.homepage-page .cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  background: rgba(124, 92, 255, 0.15);
+  transition: transform 160ms ease, background 160ms ease, border 160ms ease;
+  max-width: 100%;
+}
+
+.homepage-page .cta-link:hover {
+  transform: translateY(-1px);
+  background: rgba(124, 92, 255, 0.2);
+  border-color: rgba(124, 92, 255, 0.5);
+}
+
+/* =========================================
+   Sections
+   ========================================= */
+.homepage-page .section-head {
+  display: grid;
+  gap: 6px;
+  margin: 18px 0 12px;
+}
+
+.homepage-page .section-title {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 900;
+}
+
+.homepage-page .section-subtitle {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* =========================================
+   Brand Mission Section
+   ========================================= */
+.homepage-page .brand-mission {
+  margin: 18px 0;
+}
+
+.homepage-page .mission-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  padding: 18px;
+}
+
+.homepage-page .mission-text {
+  margin: 10px auto 0;
+  max-width: 60ch;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* =========================================
+   Products grid/cards
+   ========================================= */
+.homepage-page .products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.homepage-page .product-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 180ms ease, border 180ms ease;
+}
+
+.homepage-page .product-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.35);
+}
+
+.homepage-page .product-image {
+  width: 100%;
+  min-height: 220px;
+  position: relative;
+  border-bottom: 1px solid #ededed;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.06), transparent 55%),
+    linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(34, 197, 94, 0.10));
+}
+
+.homepage-page .product-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.85);
+  font-weight: 900;
+  font-size: 0.82rem;
+}
+
+.homepage-page .product-body {
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.homepage-page .product-name {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+.homepage-page .product-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.homepage-page .rating-text {
+  color: #444;
+  font-size: 0.88rem;
+}
+
+.homepage-page .price {
+  font-weight: 950;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.homepage-page .btn {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border 160ms ease;
+}
+
+.homepage-page .btn:hover {
+  transform: translateY(-1px);
+  background: #f7f7f7;
+  border-color: #d8d8d8;
+}
+
+.homepage-page .btn-primary {
+  background: rgba(124, 92, 255, 0.14);
+  border-color: rgba(124, 92, 255, 0.28);
+}
+
+.homepage-page .btn-ghost {
+  background: transparent;
+}
+
+.homepage-page .btn-sm {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Image variants */
+.homepage-page .img-knit { background: linear-gradient(135deg, rgba(124, 92, 255, 0.22), rgba(245, 158, 11, 0.12)); }
+.homepage-page .img-tote { background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(124, 92, 255, 0.16)); }
+.homepage-page .img-sneakers { background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(124, 92, 255, 0.18)); }
+.homepage-page .img-scarf { background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(34, 197, 94, 0.10)); }
+.homepage-page .img-denim { background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(245, 158, 11, 0.10)); }
+.homepage-page .img-hoops { background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(34, 197, 94, 0.10)); }
+.homepage-page .img-tee { background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(34, 197, 94, 0.10)); }
+.homepage-page .img-joggers { background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(59, 130, 246, 0.10)); }
+.homepage-page .img-crop { background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(59, 130, 246, 0.10)); }
+.homepage-page .img-hoodie { background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(99, 102, 241, 0.10)); }
+.homepage-page .img-cap { background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(34, 197, 94, 0.10)); }
+.homepage-page .img-backpack { background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(245, 158, 11, 0.10)); }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .homepage-page .homepage-container {
+    width: 90%;
+  }
+
+  .homepage-page .cta-title {
+    font-size: 2.1rem;
+    max-width: 28ch;
+  }
+
+  .homepage-page .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .homepage-page .product-image {
+    min-height: 240px;
+  }
+
+  .homepage-page .mission-card {
+    padding: 22px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .homepage-page .homepage-content {
+    padding: 18px 0 34px;
+  }
+
+  .homepage-page .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .homepage-page .product-image {
+    min-height: 260px;
+  }
+
+  .homepage-page .cta-card {
+    padding: 26px;
+  }
+}
