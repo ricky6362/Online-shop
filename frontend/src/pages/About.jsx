@@ -10,6 +10,7 @@ import {
   FaChevronLeft,
   FaChevronRight
 } from "react-icons/fa";
+import { Link } from "react-router-dom"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./styles/About.css";
@@ -336,9 +337,9 @@ function About() {
                 <h3>Ready to find your next favorite?</h3>
                 <p>Browse our latest collection and shop with confidence.</p>
               </div>
-              <a className="cta-btn" href="/products">
+              <Link className="cta-btn" to="/products">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </section>
         </div>

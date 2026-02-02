@@ -19,7 +19,7 @@
 
 .homepage-page .homepage-content {
   min-height: 90vh;
-  width: 100%;
+  width: 90%;
   padding: 14px 0 26px;
 }
 
@@ -276,6 +276,10 @@
 
 /* Tablet */
 @media (min-width: 768px) {
+  .homepage-page .homepage-content {
+    width: 100%;
+  }
+
   .homepage-page .homepage-container {
     width: 90%;
   }
@@ -303,6 +307,7 @@
 @media (min-width: 1024px) {
   .homepage-page .homepage-content {
     padding: 18px 0 34px;
+    width: 100%;
   }
 
   .homepage-page .products-grid {
