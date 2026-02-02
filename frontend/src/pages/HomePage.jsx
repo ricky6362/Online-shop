@@ -43,11 +43,10 @@ function HomePage() {
 
   return (
     <div className="homepage-page">
-      <div className="homepage-container">
-        <Header />
+      <Header />
 
-        <main className="homepage-content">
-          {/* CTA (single text centered + button underneath, 60vh) */}
+      <main className="homepage-content">
+        <div className="homepage-shell">
           <section className="homepage-cta">
             <div className="cta-card cta-centered">
               <h1 className="cta-title">
@@ -106,7 +105,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* BRAND MISSION (between Featured and Popular) */}
+          {/* BRAND MISSION */}
           <section className="brand-mission">
             <div className="mission-card">
               <h2 className="section-title center-heading">Our Mission</h2>
@@ -162,10 +161,10 @@ function HomePage() {
               ))}
             </div>
           </section>
-        </main>
+        </div>
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

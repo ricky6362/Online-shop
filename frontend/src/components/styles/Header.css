@@ -1,31 +1,29 @@
-/* Header.css (mobile-first) */
-:root {
-  --ink: #0f172a;
-  --muted: rgba(15, 23, 42, 0.72);
-  --line: rgba(15, 23, 42, 0.10);
-  --card: rgba(255, 255, 255, 0.78);
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --radius: 16px;
-  --focus: rgba(99, 102, 241, 0.35);
-}
+/* Header.css (scoped to Header only) */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+.hHeader {
+  --h-ink: #0f172a;
+  --h-muted: rgba(15, 23, 42, 0.72);
+  --h-line: rgba(15, 23, 42, 0.10);
+  --h-card: rgba(255, 255, 255, 0.78);
+  --h-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --h-radius: 16px;
+  --h-focus: rgba(99, 102, 241, 0.35);
 
-.siteHeader {
+  --h-container: min(1100px, 92%);
+  --h-btn: 40px;
+  --h-btn-radius: 14px;
+  --h-btn-gap: 10px;
+
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--card);
-  border-bottom: 1px solid var(--line);
+  background: var(--h-card);
+  border-bottom: 1px solid var(--h-line);
   backdrop-filter: blur(12px);
 }
 
-.headerInner {
-  width: min(1100px, 92%);
+.hHeader__inner {
+  width: var(--h-container);
   margin: 0 auto;
   padding: 12px 0;
 
@@ -33,18 +31,20 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
+  min-width: 0;
 }
 
 /* Brand */
-.brand {
+.hHeader__brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--h-ink);
+  min-width: 0;
 }
 
-.brandMark {
+.hHeader__brandMark {
   width: 38px;
   height: 38px;
   border-radius: 12px;
@@ -54,98 +54,107 @@
   color: #fff;
   font-weight: 800;
   letter-spacing: 0.4px;
+  flex: 0 0 auto;
 }
 
-.brandText {
+.hHeader__brandText {
   font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.4px;
+  white-space: nowrap;
 }
 
 /* Desktop nav hidden by default */
-.desktopNav {
+.hHeader__desktopNav {
   display: none;
   justify-content: center;
   gap: 18px;
+  min-width: 0;
 }
 
-.navLink {
+.hHeader__navLink {
   text-decoration: none;
-  color: var(--muted);
+  color: var(--h-muted);
   font-weight: 600;
   font-size: 14px;
   padding: 10px 12px;
   border-radius: 12px;
   transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+  white-space: nowrap;
 }
 
-.navLink:hover {
-  color: var(--ink);
+.hHeader__navLink:hover {
+  color: var(--h-ink);
   background: rgba(15, 23, 42, 0.06);
   transform: translateY(-1px);
 }
 
-.navLink.active {
-  color: var(--ink);
+.hHeader__navLink.is-active {
+  color: var(--h-ink);
   background: rgba(15, 23, 42, 0.08);
 }
 
 /* Actions */
-.actions {
+.hHeader__actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--h-btn-gap);
   justify-self: end;
+  min-width: 0;
 }
 
-.iconBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
+.hHeader__iconBtn {
+  width: var(--h-btn);
+  height: var(--h-btn);
+  border-radius: var(--h-btn-radius);
+  border: 1px solid var(--h-line);
   background: #fff;
   display: grid;
   place-items: center;
   cursor: pointer;
-  color: var(--ink);
+  color: var(--h-ink);
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  flex: 0 0 auto;
 }
 
-.linkBtn {
+.hHeader__linkBtn {
   text-decoration: none;
 }
 
-.iconBtn:hover {
+.hHeader__iconBtn:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 20px rgba(15, 23, 42, 0.10);
   border-color: rgba(15, 23, 42, 0.18);
 }
 
-.iconBtn:focus-visible,
-.navLink:focus-visible {
-  outline: 3px solid var(--focus);
+.hHeader__iconBtn:focus-visible,
+.hHeader__navLink:focus-visible,
+.hHeader__searchBtn:focus-visible,
+.hHeader__mobileLink:focus-visible,
+.hHeader__quickCard:focus-visible {
+  outline: 3px solid var(--h-focus);
   outline-offset: 2px;
 }
 
-.hamburgerBtn {
-  display: inline-grid; /* visible on mobile */
+.hHeader__hamburgerBtn {
+  display: inline-grid;
 }
 
 /* Search row */
-.searchRow {
+.hHeader__searchRow {
   width: 100%;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--h-line);
   max-height: 0;
   overflow: hidden;
   transition: max-height 220ms ease;
 }
 
-.searchRow.open {
+.hHeader__searchRow.is-open {
   max-height: 90px;
 }
 
-.searchForm {
-  width: min(1100px, 92%);
+.hHeader__searchForm {
+  width: var(--h-container);
   margin: 0 auto;
   padding: 10px 0;
 
@@ -153,29 +162,31 @@
   grid-template-columns: auto 1fr auto;
   gap: 10px;
   align-items: center;
+  min-width: 0;
 }
 
-.searchIcon {
+.hHeader__searchIcon {
   color: rgba(15, 23, 42, 0.55);
 }
 
-.searchInput {
+.hHeader__searchInput {
   height: 42px;
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--h-line);
   padding: 0 12px;
   font-size: 14px;
   outline: none;
   width: 100%;
   background: #fff;
+  min-width: 0;
 }
 
-.searchInput:focus {
+.hHeader__searchInput:focus {
   border-color: rgba(99, 102, 241, 0.6);
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
 }
 
-.searchBtn {
+.hHeader__searchBtn {
   height: 42px;
   border: none;
   border-radius: 14px;
@@ -185,21 +196,17 @@
   color: #fff;
   background: linear-gradient(135deg, #111827, #334155);
   transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+  white-space: nowrap;
 }
 
-.searchBtn:hover {
+.hHeader__searchBtn:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 20px rgba(15, 23, 42, 0.18);
   filter: brightness(1.05);
 }
 
-.searchBtn:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
-
-/* Mobile sheet menu */
-.menuOverlay {
+/* Mobile sheet */
+.hHeader__overlay {
   position: fixed;
   inset: 0;
   background: rgba(2, 6, 23, 0.35);
@@ -208,7 +215,7 @@
   z-index: 120;
 }
 
-.mobileSheet {
+.hHeader__sheet {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -217,36 +224,59 @@
   margin: 0 auto;
 
   background: #fff;
-  border: 1px solid var(--line);
+  border: 1px solid var(--h-line);
   border-radius: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--h-shadow);
   z-index: 130;
   padding: 14px;
+
+  /* Scroll container setup */
+  max-height: calc(100dvh - 20px);
+  overflow: hidden;
 }
 
-.mobileSheetHeader {
+.hHeader__sheetHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--h-line);
 }
 
-.mobileTitle {
+.hHeader__sheetTitle {
   font-weight: 900;
-  color: var(--ink);
+  color: var(--h-ink);
   letter-spacing: 0.2px;
 }
 
-.mobileLinks {
-  display: grid;
-  gap: 10px;
-  padding: 12px 0;
+/* Scrollable content area (works across devices) */
+.hHeader__sheetBody {
+  max-height: calc(100dvh - 20px - 64px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 12px;
+  padding-right: 2px;
 }
 
-.mobileLink {
+/* Pages heading */
+.hHeader__sectionTitle {
+  font-weight: 900;
+  color: var(--h-ink);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+/* Mobile nav links */
+.hHeader__mobileLinks {
+  display: grid;
+  gap: 10px;
+}
+
+.hHeader__mobileLink {
   text-decoration: none;
-  color: var(--muted);
+  color: var(--h-muted);
   font-weight: 700;
   padding: 12px 12px;
   border-radius: 14px;
@@ -255,44 +285,165 @@
   transition: transform 160ms ease, background 160ms ease, color 160ms ease;
 }
 
-.mobileLink:hover {
+.hHeader__mobileLink:hover {
   transform: translateY(-1px);
-  color: var(--ink);
+  color: var(--h-ink);
   background: rgba(15, 23, 42, 0.06);
 }
 
-.mobileLink.active {
-  color: var(--ink);
+.hHeader__mobileLink.is-active {
+  color: var(--h-ink);
   background: rgba(15, 23, 42, 0.08);
 }
 
-.mobileMeta {
-  border-top: 1px solid var(--line);
+/* Quick Actions block */
+.hHeader__quickActions {
+  border-top: 1px solid var(--h-line);
   padding-top: 12px;
+  margin-top: 14px;
 }
 
-.helpLink {
+.hHeader__quickTitle {
+  font-weight: 900;
+  color: var(--h-ink);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hHeader__quickGrid {
+  display: grid;
+  gap: 10px;
+}
+
+.hHeader__quickCard {
+  display: flex;
+  gap: 12px;
+  align-items: center;
   text-decoration: none;
-  color: rgba(15, 23, 42, 0.75);
-  font-weight: 600;
+
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.02),
+    rgba(15, 23, 42, 0.04)
+  );
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease,
+    background 160ms ease;
+}
+
+.hHeader__quickCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.10);
+  border-color: rgba(15, 23, 42, 0.18);
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.hHeader__quickIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  color: var(--h-ink);
+  flex: 0 0 auto;
+}
+
+.hHeader__quickText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hHeader__quickLabel {
+  color: var(--h-ink);
+  font-weight: 900;
   font-size: 14px;
+  line-height: 1.1;
+}
+
+.hHeader__quickSub {
+  color: rgba(15, 23, 42, 0.65);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* MOBILE behavior:
+   On mobile, show only Search + Cart + Hamburger in header actions.
+   Account + Wishlist should be moved into hamburger quick actions. */
+@media (max-width: 599px) {
+  .hHeader__account,
+  .hHeader__wishlist {
+    display: none;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hHeader {
+    --h-container: min(1100px, 94%);
+    --h-btn: 36px;
+    --h-btn-radius: 12px;
+    --h-btn-gap: 6px;
+  }
+
+  .hHeader__inner {
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .hHeader__brandText {
+    display: none;
+  }
+
+  .hHeader__brandMark {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+  }
+
+  .hHeader__searchForm {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hHeader__searchBtn {
+    display: none;
+  }
 }
 
 /* Tablet/Desktop */
 @media (min-width: 900px) {
-  .headerInner {
-    grid-template-columns: auto 1fr auto;
-  }
-
-  .desktopNav {
+  .hHeader__desktopNav {
     display: flex;
   }
 
-  .hamburgerBtn {
-    display: none; /* hide hamburger on desktop */
+  .hHeader__hamburgerBtn {
+    display: none;
   }
 
-  .brandText {
+  .hHeader__brandText {
     font-size: 18px;
+    display: inline;
+  }
+
+  /* On desktop, it’s fine to show all icons in header */
+  .hHeader__wishlist,
+  .hHeader__account {
+    display: inline-grid;
+  }
+
+  .hHeader__searchBtn {
+    display: inline-block;
+  }
+
+  .hHeader__searchForm {
+    grid-template-columns: auto 1fr auto;
   }
 }

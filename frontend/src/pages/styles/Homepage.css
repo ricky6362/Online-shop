@@ -1,9 +1,22 @@
 /* =========================================
-   HOMEPAGE ONLY STYLES (Scoped)
+   HOMEPAGE ONLY STYLES (Scoped + Mobile-first)
+   Fixes CTA overflow on small devices by:
+   - Applying border-box inside .homepage-page scope
+   - Using a single 90% shell wrapper for consistent width
+   - Ensuring CTA/card never exceeds its parent width
    ========================================= */
 
 .homepage-page {
   background: #ffffff;
+  overflow-x: hidden; /* safety: prevents accidental horizontal scroll */
+}
+
+/* ✅ CRITICAL: prevent width overflow from padding/borders (CTA fix) */
+.homepage-page,
+.homepage-page *,
+.homepage-page *::before,
+.homepage-page *::after {
+  box-sizing: border-box;
 }
 
 /* Black text only for homepage */
@@ -12,15 +25,28 @@
   color: #000;
 }
 
+/* ===== Layout shell ===== */
+/* Ensure everything on homepage uses the same centered width */
 .homepage-page .homepage-container {
-  width: 92%;
+  width: 100%;
   margin: 0 auto;
 }
 
+/* Add a consistent 90% inner wrapper for all sections */
 .homepage-page .homepage-content {
-  min-height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0 28px;
+}
+
+/* Force common 90% width + centered for key blocks */
+.homepage-page .homepage-cta,
+.homepage-page .collection,
+.homepage-page .brand-mission {
   width: 90%;
-  padding: 14px 0 26px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Center helpers */
@@ -33,24 +59,29 @@
 }
 
 /* =========================================
-   CTA (single full-width rectangle)
-   - Centered text + button under it
-   - Height: 60vh
+   CTA
    ========================================= */
 
 .homepage-page .homepage-cta {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .homepage-page .cta-card {
   width: 100%;
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(34, 197, 94, 0.08));
+  max-width: 100%;
+  box-sizing: border-box; /* ✅ padding stays inside width */
+  background: linear-gradient(
+    135deg,
+    rgba(124, 92, 255, 0.14),
+    rgba(34, 197, 94, 0.08)
+  );
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 22px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  padding: 18px;
   overflow: hidden;
   position: relative;
+  padding: 18px;
 }
 
 /* CTA background glow */
@@ -58,7 +89,8 @@
   content: "";
   position: absolute;
   inset: -60px;
-  background: radial-gradient(circle at 20% 30%, rgba(124, 92, 255, 0.18), transparent 45%),
+  background:
+    radial-gradient(circle at 20% 30%, rgba(124, 92, 255, 0.18), transparent 45%),
     radial-gradient(circle at 80% 60%, rgba(34, 197, 94, 0.10), transparent 45%);
   filter: blur(8px);
   z-index: 0;
@@ -69,24 +101,32 @@
   z-index: 1;
 }
 
-/* New CTA layout */
+/* CTA layout */
 .homepage-page .cta-centered {
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   text-align: center;
 }
 
-/* CTA title (single text) */
+/* Prevent text/button from forcing overflow on tiny screens */
+.homepage-page .cta-centered,
+.homepage-page .cta-title,
+.homepage-page .cta-link {
+  max-width: 100%;
+}
+
 .homepage-page .cta-title {
   margin: 0;
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  max-width: 22ch;
+  max-width: 24ch;
+  overflow-wrap: anywhere; /* ✅ prevents long words from overflowing */
+  word-break: break-word;
 }
 
 /* CTA button */
@@ -96,12 +136,16 @@
   justify-content: center;
   text-decoration: none;
   font-weight: 900;
+
   padding: 12px 16px;
   border-radius: 14px;
   border: 1px solid rgba(124, 92, 255, 0.35);
   background: rgba(124, 92, 255, 0.15);
   transition: transform 160ms ease, background 160ms ease, border 160ms ease;
-  max-width: 100%;
+
+  width: min(320px, 100%); /* ✅ never wider than the card */
+  text-align: center;
+  white-space: normal;
 }
 
 .homepage-page .cta-link:hover {
@@ -113,6 +157,7 @@
 /* =========================================
    Sections
    ========================================= */
+
 .homepage-page .section-head {
   display: grid;
   gap: 6px;
@@ -133,14 +178,17 @@
 }
 
 /* =========================================
-   Brand Mission Section
+   Brand Mission
    ========================================= */
+
 .homepage-page .brand-mission {
-  margin: 18px 0;
+  margin: 18px auto;
 }
 
 .homepage-page .mission-card {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* ✅ keep padding inside */
   background: #ffffff;
   border: 1px solid #e7e7e7;
   border-radius: 22px;
@@ -154,11 +202,13 @@
   font-size: 0.98rem;
   line-height: 1.6;
   color: #222;
+  overflow-wrap: anywhere;
 }
 
 /* =========================================
    Products grid/cards
    ========================================= */
+
 .homepage-page .products-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -166,6 +216,9 @@
 }
 
 .homepage-page .product-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background: #fff;
   border: 1px solid #e7e7e7;
   border-radius: 22px;
@@ -184,7 +237,8 @@
   min-height: 220px;
   position: relative;
   border-bottom: 1px solid #ededed;
-  background: radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.06), transparent 55%),
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.06), transparent 55%),
     linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(34, 197, 94, 0.10));
 }
 
@@ -210,12 +264,14 @@
   margin: 0;
   font-size: 1.02rem;
   font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 .homepage-page .product-meta {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  align-items: baseline;
 }
 
 .homepage-page .rating-text {
@@ -229,8 +285,17 @@
   white-space: nowrap;
 }
 
-/* Buttons */
+/* Actions inside product card */
+.homepage-page .product-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .homepage-page .btn {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   border: 1px solid #e5e5e5;
   background: #fff;
   border-radius: 14px;
@@ -274,16 +339,46 @@
 .homepage-page .img-cap { background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(34, 197, 94, 0.10)); }
 .homepage-page .img-backpack { background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(245, 158, 11, 0.10)); }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .homepage-page .homepage-content {
-    width: 100%;
-  }
+/* =========================================
+   Small phones (S7 edge-ish widths)
+   ========================================= */
 
-  .homepage-page .homepage-container {
+@media (max-width: 380px) {
+  .homepage-page .homepage-cta,
+  .homepage-page .collection,
+  .homepage-page .brand-mission {
     width: 90%;
   }
 
+  .homepage-page .cta-card {
+    padding: 14px; /* reduce padding so it never "feels" oversized */
+    border-radius: 18px;
+  }
+
+  .homepage-page .cta-centered {
+    min-height: 56vh;
+    gap: 12px;
+  }
+
+  .homepage-page .cta-title {
+    font-size: 1.25rem;
+    max-width: 26ch;
+  }
+
+  .homepage-page .cta-link {
+    width: 100%;
+  }
+
+  .homepage-page .product-actions {
+    grid-template-columns: 1fr; /* stack buttons on tiny screens */
+  }
+}
+
+/* =========================================
+   Tablet
+   ========================================= */
+
+@media (min-width: 768px) {
   .homepage-page .cta-title {
     font-size: 2.1rem;
     max-width: 28ch;
@@ -301,13 +396,19 @@
   .homepage-page .mission-card {
     padding: 22px;
   }
+
+  .homepage-page .cta-card {
+    padding: 22px;
+  }
 }
 
-/* Desktop */
+/* =========================================
+   Desktop
+   ========================================= */
+
 @media (min-width: 1024px) {
   .homepage-page .homepage-content {
     padding: 18px 0 34px;
-    width: 100%;
   }
 
   .homepage-page .products-grid {
